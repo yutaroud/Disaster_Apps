@@ -4,6 +4,8 @@
 # App_ignore
 *.txt
 /.env
+*.log
+vendor/
 
 ### macOS ###
 *.DS_Store
