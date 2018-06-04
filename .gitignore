@@ -1,6 +1,10 @@
 
 # Created by https://www.gitignore.io/api/macos,phpstorm
 
+# App_ignore
+*.txt
+/.env
+
 ### macOS ###
 *.DS_Store
 .AppleDouble
