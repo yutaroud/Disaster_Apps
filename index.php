@@ -43,6 +43,7 @@ $log->addError('えらー');
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
     <script src="./JS/map.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=<?=$GMAP_APIKEY?>&callback=initMap" defer></script>
     <title>防災啓発アプリ</title>
