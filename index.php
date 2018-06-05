@@ -31,10 +31,25 @@ $log->pushHandler($handler);
 //.env
 //変数名が他の環境変数と被らないように注意
 $name = getenv('TEST_NAME');
-echo $name;
-
+$GMAP_APIKEY = getenv('GOOGLEMAPS_APYKEY');
 //monolog
 $log->addDebug('でばっぐ');
 $log->addInfo('いんふぉ');
 $log->addWarning('わーにんぐ');
 $log->addError('えらー');
+
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="./JS/map.js"></script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=<?=$GMAP_APIKEY?>&callback=initMap" defer></script>
+    <title>防災啓発アプリ</title>
+</head>
+<body>
+<div id="map" style="height:360px"></div>
+
+</body>
+</html>
+
