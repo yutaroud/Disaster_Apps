@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="f9de3da9-f148-4e3e-ad9b-877d4fb0dac5" name="mdg" url="http://mdg-web.main.jp/owariasahi/index.php">
+        <fileTransfer host="users417.lolipop.jp" port="21" rootFolder="/home/users/0/main.jp-mdg-web/web/" accessType="FTPS">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
