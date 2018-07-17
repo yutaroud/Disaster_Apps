@@ -77,7 +77,7 @@ p {
 /* header */
 header.navbar {
     padding: 7px 0;
-
+    padding-left: 10px;
     background: #00ba8b !important;
     border-bottom-color: #00ba8b
 }
@@ -205,7 +205,7 @@ header.navbar {
 
 /* footer */
 footer {
-    margin-top: 45px;
+    margin-top: 0px;
     padding-top: 5px;
     border-top: 1px solid #eaeaea;
     color: #777;
@@ -614,3 +614,6 @@ footer ul li {
     -webkit-font-smoothing: antialiased;
 }
 
+#map {
+    display:block;
+}
