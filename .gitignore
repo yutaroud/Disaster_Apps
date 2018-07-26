@@ -6,6 +6,7 @@
 /.env
 *.log
 vendor/
+DB/
 
 ### macOS ###
 *.DS_Store

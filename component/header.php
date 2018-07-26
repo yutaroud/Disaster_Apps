@@ -30,9 +30,6 @@
                     <li>
                         <a class="mdl-navigation__link" href="http://mdg.main.jp/tomit/asahi/map7.html" onclick="jihanki_on(); return false;"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_drink</i><span>災害用自販機</span></a>
                     </li>
-                    <li>
-                        <a class="mdl-navigation__link" href="http://mdg.main.jp/tomit/asahi/map8.html" onclick="all_on(); return false;"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i><span>全表示</span></a>
-                    </li>
 
                 </ul>
             </div>
@@ -66,9 +63,6 @@
                 </li>
                 <li>
                     <a class="mdl-navigation__link" href="http://mdg.main.jp/tomit/asahi/map7.html" onclick="jihanki_on(); return false;"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">local_drink</i><span>災害用自販機</span></a>
-                </li>
-                <li>
-                    <a class="mdl-navigation__link" href="http://mdg.main.jp/tomit/asahi/map8.html" onclick="all_on(); return false;"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">report</i><span>全表示</span></a>
                 </li>
 
 
