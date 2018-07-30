@@ -589,3 +589,11 @@ footer ul li {
     background: #d49fc2;
     border-radius: 5px;
 }
+
+.row{
+    margin:auto;
+}
+.col-xs-6{
+    width:600px;
+    margin:auto;
+}
