@@ -495,14 +495,8 @@ footer ul li {
 }
 
 
-
-@media screen and (min-width:800px) {
-    .gnav {
-        display:none;
-    }
-}
-@media screen and (max-width:800px){
-    #pc,.subnavbar-inner,.subnavbar,.container{
+@media screen and (max-width:770px){
+    #pc,.subnavbar-inner,.subnavbar{
         display:none;
     }
 
@@ -511,6 +505,12 @@ footer ul li {
     }
 
 }
+@media screen and (min-width:770px) {
+    .gnav {
+        display:none;
+    }
+}
+
 
 /* fallback */
 @font-face {
@@ -524,7 +524,7 @@ footer ul li {
     font-family: 'Material Icons';
     font-weight: normal;
     font-style: normal;
-    font-size: 20px;
+    font-size: 21px;
     padding-top:3px;
     line-height: 1;
     letter-spacing: normal;
@@ -543,7 +543,7 @@ footer ul li {
 
 .gnav {
     width: 100%;
-    height: 30px;
+    height: 40px;
     background: #ff7f74;
     overflow-x: auto;
     overflow-y: hidden;
@@ -567,8 +567,8 @@ footer ul li {
 .gnav ul li a:visited {
     display: inline-block;
     width: 106px;
-    height: 40px;
-    font-size: 11px;
+    height: 60px;
+    font-size: 13px;
     background: #fff;
     color: #000;
     text-decoration: none;

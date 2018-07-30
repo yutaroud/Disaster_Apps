@@ -10,7 +10,7 @@
 
             <ul id="pc">
                 <li class="active">
-                    <a href="../../maps/home"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">import_contacts</i><span>ホーム</span> </a>
+                    <a href="./map.php"><i class="mdl-color-text--blue-grey-400 material-icons" role="presentation">import_contacts</i><span>ホーム</span> </a>
                 </li>
 
                 <li>
