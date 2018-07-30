@@ -1,3 +1,10 @@
+<?php
+if(!isset($_GET["id"])){
+    $root = (!empty($_SERVER['HTTPS']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . '/';
+    header('Location:'.$root."Disaster_App");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html>
 <head>
