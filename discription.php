@@ -8,27 +8,14 @@ if(!isset($_GET["id"])){
     //クラスの生成
     $obj=new connect();
     //sql文の発行
-    $sql="SELECT * FROM owariasahi WHERE municipality_id = :id";
-    $id=23226;
+    $sql="SELECT * FROM owari WHERE ID = :id";
+    $id = $_GET["id"];
     //クラスの中の関数の呼び出し
     $items=$obj->target($sql,$id);
+    include("component/utility.php");
 }
 ?>
-<!DOCTYPE html>
-<html>
-<head>
-    <meta charset="UTF-8">
-    <script src="./JS/map.js"></script>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="./CSS/index.css" />
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/js/bootstrap.min.js" integrity="sha384-o+RDsa0aLu++PJvFqy8fFScvbHFLtbvScb8AjopnFD+iEQ7wo/CG0xlczd+2O/em" crossorigin="anonymous"></script>
-    <title>防災啓発アプリ</title>
-</head>
-<body>
 <?php require_once('./component/header.php') ?>
 <div class="row">
     <div class="col-xs-6">
@@ -41,14 +28,10 @@ if(!isset($_GET["id"])){
                     <div class="widget-content" style="text-align:center">
                         <h4 class="bigstats"><br><?php echo $items[0]["Address"];?><br>
                             <?php echo $items[0]["Phone_number"];?></h4>
-
                         <div class="stat"><span class="value">
             写真
           </span> </div>
-                        <!-- .stat -->
                         <br>
-
-                        <!-- .stat -->
                         <div style="text-align:center" id="choice">
                             <a href="#" onclick="paintIt(this, '#990000')">
                                 <button class="mdl-button mdl-button--raised mdl-js-button dialog-button btn btn-primary">外観</button></a>
@@ -164,32 +147,32 @@ if(!isset($_GET["id"])){
 
                 <div class="shortcuts">
                     <li style="list-style:none;">
-                        <p>使用できます</p><br>
-                        <a href="#" class="shortcut"> <i class="shortcut-icon material-icons">healing</i><span class="shortcut-label">救護設備</span> </a>
-                        <a href="#" class="shortcut"><i class="shortcut-icon material-icons">local_shipping</i><span class="shortcut-label">備蓄倉庫</span> </a>
-                        <a href="" data-featherlight="image" class="shortcut_no"><i class="shortcut-icon material-icons">opacity</i><span class="shortcut-label">給水設備</span> </a>
-                        <a href="#" class="shortcut_no"> <i class="shortcut-icon material-icons">restaurant_menu</i><span class="shortcut-label">炊事設備</span> </a>
-                        <a href="#" class="shortcut"><i class="shortcut-icon material-icons">battery_charging_full</i><span class="shortcut-label">発電設備</span> </a>
-                        <a href="#" class="shortcut"><i class="shortcut-icon material-icons">hot_tub</i><span class="shortcut-label">風呂</span> </a>
-                        <a href="#" class="shortcut"><i class="shortcut-icon material-icons">wc</i><span class="shortcut-label">トイレ</span> </a>
-                        <a href="#" class="shortcut"><i class="shortcut-icon material-icons">build</i><span class="shortcut-label">その他設備</span> </a>
-
+                        <p><img src="IMAGE/maru.png" alt="使用可能" width="36px" height="36px">使用できます</p><br>
+                        <?php get_facility($items[0]["Equipment"],0,"#","healing","救護設備");?>
+                        <?php get_facility($items[0]["Warehouse"],0,"#","local_shipping","備蓄倉庫");?>
+                        <?php get_facility($items[0]["watter_supply"],0,"#","opacity","給水設備");?>
+                        <?php get_facility($items[0]["Cooking"],0,"#","restaurant_menu","炊事設備");?>
+                        <?php get_facility($items[0]["Power_generating"],0,"#","battery_charging_full","発電設備");?>
+                        <?php get_facility($items[0]["Bathroom"],0,"#","hot_tub","風呂");?>
+                        <?php get_facility($items[0]["Toilet"],0,"#","wc","トイレ");?>
+                        <?php get_facility($items[0]["Other_Equipment"],0,"#","build","その他設備");?>
                     </li>
                     <hr>
                     <li style="list-style:none;">
-                        <p>使用できません</p><br>
-                        <a href="#" class="shortcut"> <i class="shortcut-icon material-icons">healing</i><span class="shortcut-label">救護設備</span> </a>
-                        <a href="#" class="shortcut"><i class="shortcut-icon material-icons">local_shipping</i><span class="shortcut-label">備蓄倉庫</span> </a>
-                        <a href="#" data-featherlight="image" class="shortcut_no"><i class="shortcut-icon material-icons">opacity</i><span class="shortcut-label">給水設備</span> </a>
-                        <a href="#" class="shortcut_no"> <i class="shortcut-icon material-icons">restaurant_menu</i><span class="shortcut-label">炊事設備</span> </a>
-                        <a href="#" class="shortcut"><i class="shortcut-icon material-icons">battery_charging_full</i><span class="shortcut-label">発電設備</span> </a>
-                        <a href="#" class="shortcut"><i class="shortcut-icon material-icons">hot_tub</i><span class="shortcut-label">風呂</span> </a>
-                        <a href="#" class="shortcut"><i class="shortcut-icon material-icons">wc</i><span class="shortcut-label">トイレ</span> </a>
-                        <a href="#" class="shortcut"><i class="shortcut-icon material-icons">build</i><span class="shortcut-label">その他設備</span> </a>
+                        <p><img src="IMAGE/batu.png" alt="使用不可" width="36px" height="36px">使用できません</p><br>
+                        <?php get_facility($items[0]["Equipment"],1,"#","healing","救護設備");?>
+                        <?php get_facility($items[0]["Warehouse"],1,"#","local_shipping","備蓄倉庫");?>
+                        <?php get_facility($items[0]["watter_supply"],1,"#","opacity","給水設備");?>
+                        <?php get_facility($items[0]["Cooking"],1,"#","restaurant_menu","炊事設備");?>
+                        <?php get_facility($items[0]["Power_generating"],1,"#","battery_charging_full","発電設備");?>
+                        <?php get_facility($items[0]["Bathroom"],1,"#","hot_tub","風呂");?>
+                        <?php get_facility($items[0]["Toilet"],1,"#","wc","トイレ");?>
+                        <?php get_facility($items[0]["Other_Equipment"],1,"#","build","その他設備");?>
+                    </li>
                     </li>
                     <hr>
                     <li style="list-style:none;">
-                        <p>場合による</p><br>
+                        <p><img src="IMAGE/info.png" alt="場合による" width="36px" height="36px">場合による</p><br>
 
 
                     </li>
@@ -209,9 +192,9 @@ if(!isset($_GET["id"])){
             <!-- /widget-header -->
             <div class="widget-content">
                 <div class="chart">
-                    <h3>屋外人数 <?php echo $items[0]["Outdoor_capacity"] ;?></h3>
+                    <h3>屋外人数 <?php echo $items[0]["Outdoor_capacity"] ;?>人</h3>
                     <div class="chart" id="chart2">
-                        <h3> 屋内人数 <?php echo $items[0]["Indoor_capacity"] ;?></h3>
+                        <h3> 屋内人数 <?php echo $items[0]["Indoor_capacity"] ;?>人</h3>
                         <br>
                     </div>
                     <!-- /area-chart -->
@@ -220,9 +203,6 @@ if(!isset($_GET["id"])){
                 </div>
                 <!-- /widget-content -->
             </div>
-            <!-- /widget -->
-
-            <!-- /widget -->
             <div class="widget widget-nopad">
                 <div class="widget-header"> <i class="icon-exclamation-sign"></i>
                     <h3>防災担当者の声</h3>
@@ -232,7 +212,7 @@ if(!isset($_GET["id"])){
                     <table border="1" bordercolor="#fff">
                         <tbody><tr>
                             <td><br>
-                                <p>担当img<br>　防災担当者</p><br>
+                                <p><img src="IMAGE/tantou.png" alt="防災担当者の声"><br>　防災担当者</p><br>
                             </td>
                             <td>
                                 尾張旭市では、備蓄の種類を増やすなど、災害時の生活を良くする工夫がされています.
@@ -249,6 +229,5 @@ if(!isset($_GET["id"])){
         </div>
     </div>
 </div>
+
 <?php require_once('./component/footer.php')?>
-</body>
-</html>
