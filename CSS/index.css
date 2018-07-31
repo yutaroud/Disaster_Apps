@@ -610,3 +610,8 @@ footer ul li {
     margin:auto;
     text-align:center;
 }
+.workshop{
+    display:block;
+    margin:auto;
+    padding-bottom:10px;
+}

@@ -9,12 +9,21 @@ $id = 1;
 $items=$obj->target($sql,$id);
 ?>
 <?php require_once('./component/header.php') ?>
+
 <div class="content">
-    <h2 class="midashi">本アプリについて</h2>
-    <p>本アプリは自治体の防災情報を市民に伝えることを目的としています.<br>
-        自治体の公助の限界を知り、災害に備えた自助の準備に役立ててください.<br>
-        尚、本アプリは大学のオープンデータに関する研究の一環で作成されている為、<br>
-        市の公式アプリではありません.</p>
+    <h2 class="midashi"><?php echo $items[0]["city_name"];?>コンテンツ</h2>
+        <a href="./index.php">
+            避難所情報
+                        <img src="IMAGE/hinanjo1.png" width="130" height="130">
+        </a>
+                <a href="map0.html">
+                    クイズ
+                        <img src="IMAGE/workshop1.png" width="130" height="130">
+                </a>
+                <a href="map01.html">
+                    食事計画
+                        <img src="IMAGE/syokuzi1.png" width="130" height="130">
+                </a>
     <h2 class="midashi"><?php echo $items[0]["city_name"];?> 防災基本情報</h2>
     <h4>南海トラフ地震発生時</h4>
     <h3>震度</h3>
@@ -44,15 +53,21 @@ $items=$obj->target($sql,$id);
         <tr><td><h4>約9%</h4></td><td><h4>約9%</h4></td><td><h4>約7%</h4></td><td><h4>-</h4></td><td><h4>2週間程度</h4></td></tr>
         </tbody>
     </table>
-    <h2 class="midashi">アプリ内のデータについて</h2>
-    <h4><a href="<?php echo $items[0]["data_url"];?>"><?php echo $items[0]["city_name"];?>オープンデータ</a>を活用.</h4>
-    <h4><a href="<?php echo $items[0]["disaster_url"];?>"><?php echo $items[0]["city_name"];?> 地域防災計画</a></h4>
-    <br>
     <h2 class="midashi">災害発生時の情報発信サービス</h2>
     <h3>防災行政無線システム</h3>
     <h3>メール配信サービス</h3>
     <h3>Twitter <a href="https://twitter.com/_asapy_">公式アカウント</a></h3>
     <h3>Facebook <a href="https://www.facebook.com/owariasahi.asapy">公式アカウント</a></h3>
     <br>
+    <h2 class="midashi">アプリ内のデータについて</h2>
+    <h4><a href="<?php echo $items[0]["data_url"];?>"><?php echo $items[0]["city_name"];?>オープンデータ</a>を活用.</h4>
+    <h4><a href="<?php echo $items[0]["disaster_url"];?>"><?php echo $items[0]["city_name"];?> 地域防災計画</a></h4>
+    <br>
+    <h2 class="midashi">本アプリについて</h2>
+    <p>本アプリは自治体の防災情報を市民に伝えることを目的としています.<br>
+        自治体の公助の限界を知り、災害に備えた自助の準備に役立ててください.<br>
+        尚、本アプリは大学のオープンデータに関する研究の一環で作成されている為、<br>
+        市の公式アプリではありません.</p>
 </div>
-<?php require_once('./component/footer.php') ?>
+
+<?php require_once('./component/footer.php')?>
